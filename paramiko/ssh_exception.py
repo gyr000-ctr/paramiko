@@ -252,3 +252,57 @@ class MessageOrderError(SSHException):
     """
 
     pass
+
+
+class SSHSigError(SSHException):
+    """
+    Base class for errors related to SSH signatures (the ``sshsig`` format).
+
+    .. versionadded:: 5.2
+    """
+
+    pass
+
+
+class SSHSigFormatError(SSHSigError):
+    """
+    An SSH signature blob or armored text could not be parsed.
+
+    Raised for truncated or malformed binary blobs, unsupported signature
+    versions, unknown hash algorithms, invalid base64/armor, and similar
+    structural problems.
+
+    .. versionadded:: 5.2
+    """
+
+    pass
+
+
+class SSHSigNamespaceError(SSHSigError):
+    """
+    An SSH signature's namespace did not match the expected namespace.
+
+    .. versionadded:: 5.2
+    """
+
+    pass
+
+
+class SSHSigKeyMismatchError(SSHSigError):
+    """
+    An SSH signature's embedded public key did not match the expected key.
+
+    .. versionadded:: 5.2
+    """
+
+    pass
+
+
+class SSHSigVerificationError(SSHSigError):
+    """
+    An SSH signature was well-formed but cryptographically invalid.
+
+    .. versionadded:: 5.2
+    """
+
+    pass

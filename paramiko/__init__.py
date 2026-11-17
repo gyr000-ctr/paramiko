@@ -64,6 +64,18 @@ from paramiko.ssh_exception import (
     PasswordRequiredException,
     ProxyCommandFailure,
     SSHException,
+    SSHSigError,
+    SSHSigFormatError,
+    SSHSigKeyMismatchError,
+    SSHSigNamespaceError,
+    SSHSigVerificationError,
+)
+from paramiko.sshsig import (
+    SSHSignature,
+    VerificationResult,
+    VerificationStatus,
+    sign_data,
+    verify_signature,
 )
 from paramiko.server import ServerInterface, SubsystemHandler, InteractiveQuery
 from paramiko.rsakey import RSAKey
